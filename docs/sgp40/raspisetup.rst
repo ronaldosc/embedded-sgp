@@ -1,9 +1,10 @@
-Getting strated on Raspberry Pi
+Getting Started on Raspberry Pi
 ===============================
 
-This document explains how to set up the SGP40 to run with a Raspberry Pi.  
-Since the SGP40 runs at 3.3V, which matches the Raspberry Pi's logic level,  
-no level shifting is required on the i2c bus.Your sensor has the four different connectors: VCC, GND, SDA, SCL.
+This document explains how to set up the SGP40 to run with a Raspberry Pi.
+Since the SGP40 runs at 3.3V, which matches the Raspberry Pi's logic level, no
+level shifting is required on the I2C bus. Your sensor has the four different
+connectors: VCC, GND, SDA, SCL.
 
 
 Setup Guide
@@ -50,7 +51,7 @@ Raspberry Pi
 -  Adapt the driver to work with Raspberry Pi.
     -  We use the ``linux_user_space`` implementation from ``hw_i2c`` (The Linux
     -  Copy the file ``sensirion_hw_i2c_implementation.c`` from there and replace the file named the same directly in ``./hw_i2c`` or just run this command in the root directory of your project:
-   ``cp ./hw_i2c/sample-implementations/linux_user_space/sensirion_hw_i2c_implementation.c ./hw_i2c/``.
+       ``cp ./hw_i2c/sample-implementations/linux_user_space/sensirion_hw_i2c_implementation.c ./hw_i2c/``.
 -  Compile the driver.
     -  Run ``make`` in the root directory of your project.
 
@@ -87,13 +88,13 @@ Troubleshooting
 SGP sensor probing failed
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Ensure that you connected the sensor correctly: all cables are fully so all c
-   pluged in and connected to the correct header.
--  Ensure that I2C is enabled on the Raspberry Pi. For this redo the
-   steps on "Enable the I2C interface in the Raspberry Pi config" in the
-   guide above.
--  Ensure that your user account has read and write access to the i2c device. If
-
+- Ensure that you connected the sensor correctly: all cables are fully so all
+  cables are fully plugged in and connected to the correct header.
+- Ensure that I2C is enabled on the Raspberry Pi. For this redo the steps on
+  "Enable the I2C interface in the Raspberry Pi config" in the guide above.
+- Ensure that your user account has read and write access to the I2C device. If
+  it only works with user root (``sudo ./sgp40_example_usage``), it's typically
+  due to wrong permission settings.
 
 
 .. |RaspberryPi Pinout| image:: ./images/GPIO-Pinout-Diagram-2.png
